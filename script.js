@@ -13,8 +13,15 @@ class calculatrice {
     }
 
     delete() {
-        // On convertit en string pour pouvoir couper le dernier caractère
-        this.currentOperand = this.currentOperand.toString().slice(0, -1);
+        // Si on a choisi une opération mais pas encore tapé le deuxième nombre, on supprime l'opération
+        if (this.currentOperand === '' && this.operation !== undefined) {
+            this.operation = undefined;
+            this.currentOperand = this.previousOperand;
+            this.previousOperand = '';
+        } else {
+            // Sinon, on supprime le dernier caractère du nombre actuel
+            this.currentOperand = this.currentOperand.toString().slice(0, -1);
+        }
     }
 
     // aJOUTER UN CHIFFRE à l'écran
