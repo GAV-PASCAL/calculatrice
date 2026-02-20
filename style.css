@@ -1,0 +1,103 @@
+:root {
+    /* Pallete de couleur d'usage */
+    --bg-body: #051a10; /* Vert très très sombre (presque noir) */
+    --bg-calc: #0a2919; /* Vert sombre pour le corps de la calculatrice */
+
+
+    --screen-bg: #143d26; /* Fond de l'écran */
+    --text-primary: #4ade80; /* Vert claire lumineux (néon) */
+    --text-secondary: #22c55e; /* Vert standard */
+
+    --btn-bg: #113321; /* Touche standard */
+    --btn-hover: #166534; /* Touche survol */
+
+    --btn-op-bg: #15803d; /* Touche opération */
+    --btn-eq-bg: #15803d; /* Touche opération */
+    --btn-eq-text: #15803d; /* Touche opération */
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.Calculatrice {
+    background-color: var(--bg-calc);
+    width: 350px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgb(0, 255, 100, 0.1);
+    border: 1px solid #166534;
+}
+
+.display {
+    background: var(--screen-bg);
+    min-height: 100px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.previous-operand {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    height: 24px;
+}
+
+.current-operand {
+    color: var(--text-secondary);
+    font-size: 2rem;
+    font-weight : 700;
+    text-shadow: 0 0 5px rgba(74, 222, 128, 0.5); /* Effet Néon */
+}
+
+.keys-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    background: var(--btn-bg);
+    color: var(--text-primary);
+    font-size: 1.25 rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+    border-color: var(--text-primary);
+}
+
+.btn-eq {
+    background: var(--btn-eq-bg);
+    color: var(--btn-eq-text);
+    font-weight: bold;
+    box-shadow: 0 0 10px var(--text-primary);
+}
+
+.span-two {
+    grid-column: span 2;
+}
