@@ -212,7 +212,7 @@ body {
 
 .btn-eq {
     background: var(--btn-eq-bg);
-    color: var(--btn-eq-text);
+    color: var(--btn-bg);
     font-weight: bold;
     box-shadow: 0 0 10px var(--text-primary);
 }
