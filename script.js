@@ -34,7 +34,13 @@ class calculatrice {
     }
 
     chooseOperation(operation) {
-        // Si l'écran est vide, on ne fait rien
+        // Si on a une opération déjà choisie mais pas encore de nombre saisi, on change juste l'opération
+        if (this.currentOperand === '' && this.operation !== undefined) {
+            this.operation = operation;
+            return;
+        }
+
+        // Si l'écran est vide et pas d'opération en attente, on ne fait rien
         if(this.currentOperand === '') return;
 
         // Si on avait déjà un calcul en attente, on l'exécute d'abord
